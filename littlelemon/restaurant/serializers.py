@@ -14,8 +14,9 @@ class MenuSerializer(serializers.ModelSerializer):
         fields='__all__'
 
 class BookingSerializer(serializers.ModelSerializer):
+    booking_date= serializers.DateTimeField(format='%Y-%m-%d %H', input_formats=['%Y-%m-%d %H'])
     class Meta:
         model=Booking
-        fields='__all__'
+        fields=['name','no_of_guests','booking_date']
 
 
